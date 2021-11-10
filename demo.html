@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Աշխարհագրական Հարցեր</title>
+<style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+}
+
+#main {
+width: 90%;
+max-width: 800px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: ;
+
+background-image: url("https://mamul.am/images/pics/nor-hayacq-ashxarhin-u51356-1.jpg");
+color: white;
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="main">
+<div id="header">
+<h1></h1>
+
+<h2></h2>
+
+
+</div>
+<form id="form1">
+<h2> Կայքը Պատրաստվել է Ռաֆիկ Մարտիրոսյանի կողմից</h2>
+___________________________________________________________________________________________
+<h2>Որն է Ռումինիայի Մայրաքաղաքը?</h2>
+<label for="var_string"><input type="radio" name="variable" value="0" id="var_string" />Աթենք</label>
+<label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Մադրիդ</label>
+<label for="var_info"><input type="radio" name="variable" value="25" id="var_info" />Մարսել</label>
+<label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/> Բուխարեստ</label>
+___________________________________________________________________________________________
+<h2>Արագած լեռան բարձրությունը?</h2>
+<label for="sub_string"><input type="radio" name="sub" value="25" id="sub_string"/>4490m</label>
+<label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>5165m</label>
+<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />4090m</label>
+<label for="sub_condition"><input type="radio" name="sub" value="0" id="sub_condition" />8850m </label>
+___________________________________________________________________________________________
+<h2>Չինական Մեծ պատի երկարությունը?</h2>
+<label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />	21 196 կիլոմետր</label>
+<label for="cat_join"><input type="radio" name="con" value="25" id="cat_join" />21 556 կիլոմետր</label>
+<label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" /> 36 765 կիլոմետր</label>
+<label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />16 798 կիլոմետր</label>
+___________________________________________________________________________________________
+<h2>Որտեղ է գտնվում Վիկտորինա ջրվեժը?</h2>
+<label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />Աֆրիկա</label>
+<label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />Եվրասիա</label>
+<label for="if_info"><input type="radio" name="ifstate" value="0" id="if_info" />Հյուսիսային Ամերիկա </label>
+<label for="if_condition"><input type="radio" name="ifstate"  value="25" id="if_condition" />Ավստրալիա</label>
+___________________________________________________________________________________________
+<button type="submit" value="Submit">Հաստատել</button>
+<a href="https://www.w3schools.com">
+
+</form>
+
+
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+       variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+	   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+	   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+	   ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+
+
+	   result = variable + sub + con + ifstate;
+
+	document.getElementById("grade").innerHTML = result;
+
+ grading = [
+	   {score:0,feedback:"I don't think you studied", image: "none.jpg"},
+	   {score:25,feedback:"You need to spend more time. Try again", image: "poor.jpg"},
+	   {score:50,feedback:"I think you could do better. Try again.", image: "avg.jpg"},
+	   {score:75,feedback:"So close. Try again.", image: "above.jpg"},
+	   {score:100,feedback:"Excellent! You're a JavaScript pro!", image: "excellent.jpg"}
+	   ];
+
+for(i=0; i<grading.length; i++) {
+    if(result == grading[i].score) {
+    result2 = grading[i].feedback + "<br /><img src='" + grading[i].image + "' width='300'  />";
+	  }
+	  }
+
+
+document.getElementById("grade2").innerHTML = result2;
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+
+</div>
+</body>
+</html>
